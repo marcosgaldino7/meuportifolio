@@ -29,3 +29,35 @@ body {
 
 
 
+@media (max-width: 1400px) {
+    .construct h1 {
+        font-size: 3rem; /* Ajuste o tamanho da fonte conforme necessário */
+    }
+}
+
+@media (max-width: 1024px) {
+    .construct {
+        padding: 20px;
+    }
+    .construct h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .construct {
+        padding: 10px;
+    }
+    .construct h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .construct {
+        padding: 5px;
+    }
+    .construct h1 {
+        font-size: 1.5rem;
+    }
+}
