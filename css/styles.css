@@ -286,7 +286,6 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .faculdade-foto img {
@@ -295,6 +294,7 @@ nav a {
     object-fit: contain;
     border-radius: 20px;
     border: 3px solid #1564C0;
+    animation: slideIn 8s ease forwards;
 }
 
 .faculdade-texto {
@@ -346,7 +346,6 @@ nav a {
     display: flex;
     padding: 0;
     gap: 40px;
-
 }
 
 .curso-titulo h2 {
@@ -450,8 +449,8 @@ nav a {
     gap: 30px;
     height: auto; 
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.8);
     margin: 100px 100px 100px 100px; 
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   .projetos-titulo {
@@ -485,38 +484,58 @@ nav a {
     height: auto;
     display: flex;
     align-items: center;
-    padding: 20px 2px;
-    gap: 100px;  
+    padding: 10px 2px;
+    gap: 10px;  
   }
 
   .projetos-web {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* teste
     padding: 0;
     border: 10px solid #1564C0;
     border-radius: 50px;
+    */
+    /* inicio de teste 2*/
+    padding: 90px;
+    background-image: url(/images/smart.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
   }
 
   .projetos-web h4 {
     font-family: "Gowun Batang", serif;
-    font-weight: 900;
+    font-weight: 800;
     font-style: normal;
-    color: #1A2E8A;
-    font-size: 1.8rem;
+    color: #CFD6E6;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    padding-top: 2px;
   }
 
 
   .projetos-web p {
-    color: #474C62;
+    color: #CFD6E6;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     font-variation-settings: "wdth" 100;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
+
+  .projetos-web a {
+    color: #CFD6E6;
+  }
+
 
   .projetos-imagem {
     padding: 10px 0;
@@ -524,9 +543,11 @@ nav a {
 
   .projetos-imagem img {
 
-    max-width: 100%; 
+    max-width: 80%; 
     height: auto; 
-    object-fit: contain; 
+    object-fit: contain;
+    /* teste */
+    padding: 10px 0; 
 
   }
 
@@ -538,15 +559,15 @@ nav a {
     animation: slideInFromBottom 8s ease forwards;
   }
 
-  #projeto3 {
+#projeto3 {
     animation: slideInFromRight 8s ease forwards;
-  }
+}
 
-  footer {
+.footer {
     height: auto;
     display: flex;
     flex-direction: column;
-    background-color: #D0D6E7;
+    background-color: rgba(208, 214, 231, 0.8);
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -554,7 +575,7 @@ nav a {
 
 
 
-  footer h3 {
+.footer h3 {
 
     font-family: "Gowun Batang", serif;
     font-weight: 800;
