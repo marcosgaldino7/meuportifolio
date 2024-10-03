@@ -120,6 +120,17 @@ header, .presentation-container {
     }
 }
 
+@keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(300px); 
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 .presentation-texto { 
     animation: slideIn 8s ease forwards; 
 }
@@ -181,7 +192,7 @@ nav a {
     position: relative;
     display: flex; 
     align-items: center; 
-    padding: 200px; 
+    padding: 200px 200px 100px 200px; 
     gap: 30px;
     height: auto; 
     overflow: hidden;
@@ -209,12 +220,12 @@ nav a {
     display: flex;
     flex-direction: column;
     height: 500px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.9);
     align-items: center;
     justify-content: center;
     border: 10px solid #1564C0;
     border-radius: 50px;
-    gap: 40px;
+    gap: 10px;
     animation: slideInFromRight 8s ease forwards;
 }
 
@@ -222,16 +233,437 @@ nav a {
     font-family: "Gowun Batang", serif;
     font-weight: 800;
     font-style: normal;
-    color: #54442A;
+    color: #1A2E8A;
     font-size: 2.5rem;
     letter-spacing: 5px;
 }
 
 .texto-quemsoueu p {
-    color: #5F5648;
+    color: #474C62;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
+
+.formacao {
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    gap: 30px;
+    height: auto; 
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 200px 100px 200px;
+}
+
+.faculdade {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    border-bottom: 3px solid #1A2E8A;
+    padding-bottom: 20px;
+
+}
+
+.graduacao {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+.faculdade-foto {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.faculdade-foto img {
+    max-width: 100%; 
+    height: auto; 
+    object-fit: contain;
+    border-radius: 20px;
+    border: 3px solid #1564C0;
+}
+
+.faculdade-texto {
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.faculdade-texto h2 {
+    font-family: "Gowun Batang", serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #1A2E8A;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.faculdade-texto p {
+    color: #474C62;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 1.5rem;
+}
+
+.cursos-extra {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-top: 2px;  
+    align-items: center;
+}
+
+.curso-titulo {
+    padding-bottom: 2px;
+}
+
+.curso {
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 0;
+    gap: 40px;
+
+}
+
+.curso-titulo h2 {
+    font-family: "Gowun Batang", serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #1A2E8A;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+
+.alura, .preditiva {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.curso-imagem {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+
+.alura img {
+    max-width: 70%; 
+    height: auto; 
+    object-fit: contain; 
+    margin-right: 0;  
+}
+
+.preditiva img {
+    max-width: 90%; 
+    height: auto; 
+    object-fit: contain;   
+}
+
+.curso-texto {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    gap: 10px;
+
+}
+
+.curso-texto h3 {
+
+    font-family: "Gowun Batang", serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #1A2E8A;
+    font-size: 1.5rem;
+}
+
+.curso-texto span {
+
+    color: #1A2E8A;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    text-align: center;
+    
+}
+
+.preditiva ul {
+    color: #1A2E8A;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 0.9rem;
+    text-align: left !important;
+
+  }
+
+  .alura ul {
+    color: #1A2E8A;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 1.2rem;
+    text-align: left !important;
+
+  }  
+
+  .projetos {
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    gap: 30px;
+    height: auto; 
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 100px 100px 100px 100px; 
+  }
+
+  .projetos-titulo {
+    text-align: center;
+    justify-content: center;
+    padding: 20px 20px;
+  }
+
+  .projetos-titulo h2 {
+    font-family: "Gowun Batang", serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #1A2E8A;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .projetos-titulo span {
+    color: #474C62;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .projetos-freela {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 20px 2px;
+    gap: 100px;  
+  }
+
+  .projetos-web {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border: 10px solid #1564C0;
+    border-radius: 50px;
+  }
+
+  .projetos-web h4 {
+    font-family: "Gowun Batang", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #1A2E8A;
+    font-size: 1.8rem;
+  }
+
+
+  .projetos-web p {
+    color: #474C62;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .projetos-imagem {
+    padding: 10px 0;
+  }
+
+  .projetos-imagem img {
+
+    max-width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+
+  }
+
+  #projeto1 {
+    animation: slideIn 8s ease forwards;  
+  }
+
+  #projeto2 {
+    animation: slideInFromBottom 8s ease forwards;
+  }
+
+  #projeto3 {
+    animation: slideInFromRight 8s ease forwards;
+  }
+
+  footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #D0D6E7;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  footer h3 {
+
+    font-family: "Gowun Batang", serif;
+    font-weight: 800;
+    font-style: normal;
+    color: #1A2E8A;
+    font-size: 1.5rem;
+
+  }
+
+  .contatos {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: auto;
+    width: 100%;
+    padding: 0 40px 40px 40px;
+  }
+
+  .redes {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+  }
+
+  .redes i {
+    font-size: 3.5rem;
+  }
+
+  #linkedin i {
+    color: #0A66C2;
+    padding-bottom: 40px;
+  }
+
+  #insta i {
+    color: #e95950;
+  }
+
+  #git {
+    padding-top: 40px;
+    color: #000000;
+  }
+
+.curriculo {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 180px;
+    
+    
+}
+
+
+.curriculo h6 {
+    color: #1A2E8A;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 1rem;
+}
+
+.curriculo i {
+    color: #C1090B;
+    font-size: 4rem;
+}
+
+.telefones {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+
+}
+
+.telefones h6 {
+    color: #1A2E8A;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 1rem;
+}
+
+.telefones ul {
+    font-size: 1.2rem;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    gap: 20p;
+}
+
+.telefones i {
+    color: #1A2E8A;  
+}
+
+.telefones ul li {
+    margin-bottom: 10px; 
+    font-size: 1rem;
+    gap: 40px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: #1564C0;
+  }
+
