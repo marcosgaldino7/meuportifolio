@@ -6,21 +6,32 @@
     <title>Portfólio do Marcos Galdino</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/responsividade.css">
 </head>
 <body>
     <div class="background-image"></div> 
     <header>
-        <nav>
+        <nav class="menu-desk">
             <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="Quem sou eu?">Quem Sou Eu</a></li>
-                <li><a href="Formação Acadêmica">Formação Acadêmica</a></li>
-                <li><a href="Projetos">Projetos</a></li>
-                <li><a href="Contatos">Contatos</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#quemsoueu">Quem Sou Eu?</a></li>
+                <li><a href="#formacao">Formação Acadêmica</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+        </nav>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#quemsoueu">Quem Sou Eu?</a></li>
+                <li><a href="#formacao">Formação Acadêmica</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
             </ul>
         </nav>
     </header>
-    <div class="presentation-container">
+    <div class="presentation-container" id="home">
         <div class="presentation-texto"> 
             <h1>Olá, Bem vindo ao meu Portfólio</h1>
         </div>
@@ -29,7 +40,7 @@
         </div>
     </div>
     <main>
-        <section class="quemsoueu">
+        <section class="quemsoueu" id="quemsoueu">
             <div class="imagem-quemsoueu">
               <img src="/images/postInstagram.png" alt="Imagem falando do marcos">
             </div>
@@ -38,7 +49,7 @@
                 <p>Eu Sou o Marcos Galdino, apaixonado por tecnologia e com quase 20 anos de experiência na área de TI. Sou formado em Análise de Sistemas e ao longo dos anos tive a oportunidade de atuar no varejo em grandes marcas trabalhando com Linx Pos, Linx ERP e SQL Server. Recentemente fiz alguns projetos com intuito de ajudar pessoas e empresas que ainda não têm presença digital a conquistar seu espaço na internet, criando páginas web funcionais e personalizadas. Além disso, sou adepto dos esportes e pratico corrida de rua, o que se tornou minha terapia. </p>
             </div>
           </section>
-          <section class="formacao">
+          <section class="formacao" id="formacao">
             <div class="faculdade">
                 <div class="graduacao">
                     <div class="faculdade-foto"> 
@@ -53,7 +64,7 @@
             </div>
             <div class="cursos-extra" >
                 <div class="curso-titulo">
-                    <h2><strong> Cursos em Andamento </strong></h2>
+                    <h2><strong> Cursos</strong></h2>
                 </div>
                 <div class="curso">  
                     
@@ -96,7 +107,7 @@
             
 
           </section>
-          <section class="projetos">
+          <section class="projetos" id="projetos">
             <div class="projetos-titulo"> 
                 <h2> <strong> Projetos </strong> </h2>
                 <span> <strong> 
@@ -134,37 +145,44 @@
             
 
           </section>
-          <section class="footer">
-            <h3> Onde me encontrar? </h3>
-        <div class="contatos">
-            <div class="redes"> 
-                <a href="https://www.linkedin.com/in/marcos-a-galdino-da-silva-67166446/" target="_blank" id="linkedin">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/marcosgaldino_7" target="_blank" id="insta">
-                    <i class="fa-brands fa-square-instagram"></i>
-                </a>
-                <a href="https://github.com/marcosgaldino7" target="_blank" id="git"></a>
-                    <i class="fa-brands fa-github"></i>
-                </a>
+          <section class="footer" id="contatos">
+            <div class="footer-container">
+                <div class="footer-titulo"> 
+                    <h3> Onde me encontrar? </h3>
+                </div>  
+                <div class="curriculo">
+                    <h6> Download do meu curriculo </h6>
+                    <a href="/pdf/marcoscurriculo.pdf" download="marcoscurriculo.pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div> 
+            <div class="contatos">
+                <div class="redes"> 
+                    <a href="https://www.linkedin.com/in/marcos-a-galdino-da-silva-67166446/" target="_blank" id="linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/marcosgaldino_7" target="_blank" id="insta">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+                    <a href="https://github.com/marcosgaldino7" target="_blank" id="git">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                
+                <div class="telefones">
+                    <h6> Entre em contato comigo: </h6>
+                    <ul class="telefones-icons">
+                        <li><i class="fa-solid fa-phone">:</i>(11) 98132-1859</li>
+                        <li><i class="fa-brands fa-whatsapp">:</i>(11) 98132-1859</li>
+                        <li><i class="fa-solid fa-envelope">:</i>marcos.galdino7@gmail.com</li>
+                    </ul>
+                </div>
             </div>
-            <div class="curriculo">
-                <h6> Click no ícone para download do meu curriculo </h6>
-                <a href="/pdf/marcoscurriculo.pdf" download="marcoscurriculo.pdf">
-                    <i class="fa-solid fa-file-pdf"></i>
-                </a>
             </div>
-            <div class="telefones">
-                <h6> Entre em contato comigo: </h6>
-                <ul class="telefones-icons">
-                    <li><i class="fa-solid fa-phone">:</i>(11) 98132-1859</li>
-                    <li><i class="fa-brands fa-whatsapp">:</i>(11) 98132-1859</li>
-                    <li><i class="fa-solid fa-envelope">:</i>marcos.galdino7@gmail.com</li>
-                </ul>
-            </div>
-        </div>
           </section>
     </main>
+
+    <script src="/javascript/scripts.js"></script>
 
 </body>
 </html>

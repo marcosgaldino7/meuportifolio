@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
-
     list-style-type: none;
     text-decoration: none;
 }
@@ -15,11 +14,13 @@
 body {
     margin: 0;
     padding: 0; 
-
     font-family: sans-serif;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .background-image {
@@ -36,10 +37,6 @@ body {
     z-index: -1; 
 }
 
-header {
-    background-color: transparent; 
-}
-
 header, .presentation-container {
     position: static; 
 }
@@ -54,6 +51,7 @@ header, .presentation-container {
     height: auto; 
     gap: 20px; 
     padding: 0 20px; 
+    max-width: 1200px; 
 }
 
 .presentation-texto {
@@ -75,7 +73,9 @@ header, .presentation-container {
     margin-top: 200px;
     opacity: 0;
     transform: translateX(300px); 
+    /*
     transition: opacity 1s ease, transform 1s ease;
+    */
     width: 400px;
     height: 500px;
     max-width: 50%;
@@ -88,14 +88,43 @@ header, .presentation-container {
     object-fit: contain; 
 }
 
-.presentation-container .presentation-texto { 
+.presentation-container.show .presentation-texto { 
     opacity: 1;
     transform: translateX(0); 
+    animation: slideIn 8s ease forwards; 
 }
 
-.presentation-container .foto { 
+.presentation-container.show .foto { 
     opacity: 1;
     transform: translateX(0);
+    animation: slideInFromRight 8s ease forwards;
+}
+
+.formacao.show .faculdade-foto img { 
+    animation: slideIn 8s ease forwards; 
+}
+
+.projetos.show .projetos-web#projeto1 {
+    animation: slideIn 8s ease forwards; 
+}
+
+.projetos.show .projetos-web#projeto2 {
+    animation: slideInFromBottom 8s ease forwards;
+}
+
+.projetos.show .projetos-web#projeto3 {
+    animation: slideInFromRight 8s ease forwards;
+}
+
+.quemsoueu.show .imagem-quemsoueu { 
+    height: auto;
+    align-items: center;
+    animation: slideIn 8s ease forwards; 
+}
+.quemsoueu.show .texto-quemsoueu { 
+    opacity: 1;
+    transform: translateX(0); /* Ou qualquer outro movimento desejado */
+    animation: slideInFromRight 8s ease forwards;
 }
 
 @keyframes slideIn {
@@ -130,7 +159,7 @@ header, .presentation-container {
       transform: translateY(0);
     }
   }
-
+/*
 .presentation-texto { 
     animation: slideIn 8s ease forwards; 
 }
@@ -138,9 +167,9 @@ header, .presentation-container {
 .foto {
     animation: slideInFromRight 8s ease forwards; 
 }
-
+*/
 header {
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: transparent;
     color: white;
     position: fixed; 
     top: 0; 
@@ -148,7 +177,13 @@ header {
     width: auto;
     z-index: 100; 
     padding: 10px 20px; 
+    width: 100%;
 }
+
+#menu-icon {
+    display: none;
+}
+
 
 nav {
     background-color: rgba(0, 0, 0, 0.8); 
@@ -163,7 +198,7 @@ nav {
     border-radius: 10px; 
     padding: 10px 10px 10px 10px;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 100px;
 }
 
 nav ul {
@@ -178,6 +213,11 @@ nav li {
     margin-left: 30px; 
 }
 
+nav li a:hover {
+    color: #1564C0;
+    cursor: pointer;
+}
+
 nav a {
     text-decoration: none;
     color: white;
@@ -188,45 +228,66 @@ nav a {
     font-variation-settings: "wdth" 100;
 }
 
+header nav ul li a {
+    border-radius: 5px;
+    transition: all .3s ease;
+    padding: 5px;
+}
+
+header nav ul li a.actived {
+    background-color: #fff;
+    color: #1564C0;
+}
+
+/*menu responsivo */
+/* parte do código para o menu*/
+/* Estilos gerais para o menu hambúrguer */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: block; /* Mostra o menu quando ativo */
+}
+/* fim da parte do código para menu*/
+ /*menu responsivo fim*/
+
+
 .quemsoueu {
     position: relative;
     display: flex; 
-    align-items: center; 
-    padding: 200px 200px 100px 200px; 
+    align-items: stretch;
+    padding: 5% 10%; 
     gap: 30px;
     height: auto; 
     overflow: hidden;
 }
 
-.quemsoueu > div { 
-    width: 50%; 
-    padding: 0 20px; 
+.imagem-quemsoueu, .texto-quemsoueu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.imagem-quemsoueu {
-    height: auto;
-    align-items: center;
-    animation: slideIn 8s ease forwards; 
-}
 
 .imagem-quemsoueu img { 
-    max-width: 100%; 
-    height: auto; 
     border: 10px solid #1564C0;
     border-radius: 50px; 
+    object-fit: cover;
+    width: 100%;
+    height: auto;
 }
 
 .texto-quemsoueu {
     display: flex;
     flex-direction: column;
-    height: 500px;
     background-color: rgba(255, 255, 255, 0.9);
-    align-items: center;
-    justify-content: center;
     border: 10px solid #1564C0;
     border-radius: 50px;
-    gap: 10px;
-    animation: slideInFromRight 8s ease forwards;
+    padding: 20px;
+    gap: 5px;
+    height: auto;
 }
 
 .texto-quemsoueu h3 {
@@ -256,7 +317,7 @@ nav a {
     height: auto; 
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.8);
-    margin: 0 200px 100px 200px;
+    margin: 10% 10%;
 }
 
 .faculdade {
@@ -286,6 +347,7 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 5px;
 }
 
 .faculdade-foto img {
@@ -294,7 +356,9 @@ nav a {
     object-fit: contain;
     border-radius: 20px;
     border: 3px solid #1564C0;
+    /*
     animation: slideIn 8s ease forwards;
+    */
 }
 
 .faculdade-texto {
@@ -324,6 +388,7 @@ nav a {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     font-size: 1.5rem;
+    align-items: center;
 }
 
 .cursos-extra {
@@ -336,7 +401,7 @@ nav a {
 }
 
 .curso-titulo {
-    padding-bottom: 2px;
+    padding-bottom: 1px;
 }
 
 .curso {
@@ -345,7 +410,7 @@ nav a {
     height: auto;
     display: flex;
     padding: 0;
-    gap: 40px;
+    gap: 10px;
 }
 
 .curso-titulo h2 {
@@ -446,17 +511,20 @@ nav a {
     display: flex; 
     flex-direction: column;
     align-items: center; 
-    gap: 30px;
+    gap: 100px;
     height: auto; 
     overflow: hidden;
-    margin: 100px 100px 100px 100px; 
+    margin: 10% 10%; 
     background-color: rgba(255, 255, 255, 0.8);
   }
 
   .projetos-titulo {
+    position: relative;
+    height: auto;
     text-align: center;
     justify-content: center;
     padding: 20px 20px;
+    
   }
 
   .projetos-titulo h2 {
@@ -466,6 +534,7 @@ nav a {
     color: #1A2E8A;
     font-size: 2.5rem;
     letter-spacing: 3px;
+    
   }
 
   .projetos-titulo span {
@@ -477,6 +546,7 @@ nav a {
     font-variation-settings: "wdth" 100;
     text-align: center;
     font-size: 1rem;
+    margin-bottom: 100%;
   }
 
   .projetos-freela {
@@ -484,7 +554,7 @@ nav a {
     height: auto;
     display: flex;
     align-items: center;
-    padding: 10px 2px;
+    padding: 10px 10px;
     gap: 10px;  
   }
 
@@ -506,7 +576,7 @@ nav a {
     border: none;
     width: 100%;
     max-width: 400px;
-    height: auto;
+    height: 700px;
 
   }
 
@@ -517,7 +587,7 @@ nav a {
     color: #CFD6E6;
     font-size: 1.6rem;
     margin-bottom: 5px;
-    padding-top: 2px;
+    padding-top: 20%;
   }
 
 
@@ -529,7 +599,7 @@ nav a {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .projetos-web a {
@@ -551,18 +621,6 @@ nav a {
 
   }
 
-  #projeto1 {
-    animation: slideIn 8s ease forwards;  
-  }
-
-  #projeto2 {
-    animation: slideInFromBottom 8s ease forwards;
-  }
-
-#projeto3 {
-    animation: slideInFromRight 8s ease forwards;
-}
-
 .footer {
     height: auto;
     display: flex;
@@ -571,52 +629,69 @@ nav a {
     width: 100%;
     align-items: center;
     justify-content: center;
-  }
+    padding: 20px;
+}
 
+.footer-container {
+    max-width: 1200px; /* Defina a largura máxima do contêiner */
+    margin: 0 auto; /* Centralize o contêiner */
+    width: 100%; 
+}
+
+.footer-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .footer h3 {
 
     font-family: "Gowun Batang", serif;
-    font-weight: 800;
+    font-weight: 900;
     font-style: normal;
     color: #1A2E8A;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 
-  }
 
-  .contatos {
+}
+
+.contatos {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content:space-around;
     height: auto;
     width: 100%;
-    padding: 0 40px 40px 40px;
-  }
-
+    padding: 0;
+    margin: 0;
+}
   .redes {
     display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    align-items: center;
-
+    justify-content: space-evenly;
+    padding: 0 0px;
+    gap: 0px;
   }
-
+  
+  #linkedin, #insta, #git {
+    margin: 0;
+    padding: 0;
+  }
+  
   .redes i {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 
   #linkedin i {
     color: #0A66C2;
-    padding-bottom: 40px;
   }
 
   #insta i {
     color: #e95950;
+
   }
 
-  #git {
-    padding-top: 40px;
+  #git i {
+
     color: #000000;
   }
 
@@ -625,7 +700,6 @@ nav a {
     flex-direction:column;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 180px;
     
     
 }
@@ -638,18 +712,19 @@ nav a {
     font-weight: 900;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
 
 .curriculo i {
     color: #C1090B;
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 .telefones {
     display: flex;
     flex-direction: column;
     align-items: left;
+    padding-right: 50px;
 
 
 }
@@ -661,15 +736,17 @@ nav a {
     font-weight: 900;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    margin: 0;
+    padding-bottom: 5px;
 }
 
 .telefones ul {
-    font-size: 1.2rem;
+    font-size: 2rem;
     list-style: none; 
     padding: 0;
     margin: 0;
-    gap: 20p;
+    gap: 20px;
 }
 
 .telefones i {
@@ -677,9 +754,9 @@ nav a {
 }
 
 .telefones ul li {
-    margin-bottom: 10px; 
+    margin-bottom: 20px; 
     font-size: 1rem;
-    gap: 40px;
+    gap: 10px;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
