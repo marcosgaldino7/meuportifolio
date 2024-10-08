@@ -15,21 +15,23 @@ menuLinks.forEach(link => {
 });
 
 
-
 // Seleciona todas as seções a serem animadas
-const sectionsToAnimate = document.querySelectorAll('.presentation-container, .formacao, .projetos, .quemsoueu');
+const sectionsToAnimate = document.querySelectorAll('.formacao, .projetos, .quemsoueu');
+
+// Seleciona a .presentation-container separadamente para ativar ao carregar a página
+const presentationContainer = document.querySelector('.presentation-container');
 
 // Cria o observador de interseção
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show'); // Adiciona a classe 'show' quando a seção entra em foco
-    } else {
-      entry.target.classList.remove('show'); // Remove a classe 'show' se a seção sair do foco
-    }
-  });
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('show'); // Adiciona a classe 'show' quando a seção entra em foco
+} else {
+ entry.target.classList.remove('show'); // Remove a classe 'show' se a seção sair do foco
+ }
+ });
 }, {
-  threshold: 0.1 // Define quando a animação será ativada (50% da seção visível)
+ threshold: 0.1 // Define quando a animação será ativada (10% da seção visível)
 });
 
 // Flag para controlar o estado de rolagem
@@ -37,21 +39,26 @@ let isScrolling = false;
 
 // Função para ativar o observador apenas quando a página estiver rolando
 const handleScroll = () => {
-  if (!isScrolling) {
-    isScrolling = true;
+if (!isScrolling) {
+isScrolling = true;
 
-    // Adiciona o observador a cada seção apenas uma vez
-    sectionsToAnimate.forEach(section => {
-      observer.observe(section);
-    });
+// Adiciona o observador a cada seção apenas uma vez
+ sectionsToAnimate.forEach(section => {
+observer.observe(section);
+});
 
-    // Remove o evento de scroll após a ativação
-    window.removeEventListener('scroll', handleScroll);
-  }
+// Remove o evento de scroll após a ativação
+ window.removeEventListener('scroll', handleScroll);
+ }
 };
 
 // Adiciona o evento de scroll
 window.addEventListener('scroll', handleScroll);
+
+// Ativa o efeito da .presentation-container ao carregar a página
+window.addEventListener('load', () => {
+presentationContainer.classList.add('show');
+});
 
 
 

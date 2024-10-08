@@ -441,10 +441,10 @@
     #menu-icon {
         display: block; /* Exibe o ícone do menu */
         position: fixed;
-        top: 10px;
-        right: 20px;
+        top: 30px;
+        right: 80px;
         z-index: 110; /* Certifica que o ícone fica acima do menu */
-        font-size: 30px;
+        font-size: 50px;
         color: #1564C0;
     }
 
@@ -1102,13 +1102,12 @@
     .redes {
         padding: 0 80px;
         gap: 30px;
-        justify-content: space-between;
     }
 
  
  
     .redes i {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .curriculo h6 {
@@ -1123,19 +1122,19 @@
   
     .telefones h6 {
  
-        font-size: 0.2rem;
+        font-size: 1rem;
         padding-bottom: 10px;
 
     }
     
     .telefones ul {
-        font-size: 0.2rem;
+        font-size: 0.7rem;
         gap: 20px;
     }
     
     .telefones ul li {
         margin-bottom: 10px; 
-        font-size: 0.2rem;
+        font-size: 0.6rem;
     }
 }
 
@@ -1216,9 +1215,131 @@
         font-size: 0.7rem;
   
     }
+
+    .redes i {
+        font-size: 3rem;
+    }
+
+    .curriculo h6 {
+
+        font-size: 1rem;
+    }
+    
+    .curriculo i {
+        font-size: 3rem;
+    }
+    
+  
+    .telefones h6 {
+ 
+        font-size: 1rem;
+        padding-bottom: 10px;
+
+    }
+    
+    .telefones ul {
+        font-size: 1rem;
+        gap: 20px;
+    }
+    
+    .telefones ul li {
+        margin-bottom: 10px; 
+        font-size: 0.9rem;
+    }
+
+    .contatos {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
     
 
+}
 
+@media (max-width: 400px){
+    .background-image {
+        background-image: url(/images/mobile/cpd4.png);
+    }
+
+    .presentation-texto h1 {
+
+        font-size: 2.3rem;
+        letter-spacing: 2px;
+    }
+
+    .quemsoueu {
+        padding: 0 1px;
+        margin: 0;
+    }
+
+    .imagem-quemsoueu img { 
+ 
+        width: 90%;
+
+    }
+
+    .texto-quemsoueu .imagem-quemsoueu {
+        width: 60%;
+    }
+
+    .texto-quemsoueu h3 {
+
+        font-size: 1.2rem;
+
+    }
+    
+    .texto-quemsoueu p {
+        font-size: 0.7rem;
+    }
+
+    .faculdade-texto h2 {
+    
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .faculdade-texto p {
+     
+        font-size: 0.8rem;
+
+    }
+
+    .curso-titulo h2 {
+        font-size: 1.1rem;
+    }
+
+    .curso-texto h3 {
+    
+        font-size: 0.5rem;
+    }
+
+    .preditiva ul {
+
+        font-size: 0.4rem;
+
+    
+    }
+    
+    .alura ul {
+   
+        font-size: 0.8rem;
+
+    }
+
+    .projetos-titulo h2 {
+        
+        font-size: 1.5rem;
+    
+
+        
+    }
+    
+    .projetos-titulo span {
+        font-size: 0.7rem;
+  
+    }
 
     
 
