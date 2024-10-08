@@ -664,12 +664,14 @@ header nav ul li a.actived {
     width: 100%;
     padding: 0;
     margin: 0;
+    margin-top: 50px;
+    justify-content: space-evenly;
 }
   .redes {
     display: flex;
     justify-content: space-evenly;
     padding: 0 0px;
-    gap: 0px;
+    gap: 50px;
   }
   
   #linkedin, #insta, #git {
